@@ -18,6 +18,8 @@ public class ServicioEnvio extends Service {
             Log.d("MIAPP", "Servicio iniciado!...enviando el correo");
             //TODO enviaríamos el correo
 
+            // Nosotros cuando terminemos de realizar la acción que queremos  paramos el servicio
+            // y llamaría a onDestroy()
             stopSelf(startId);
         }
         catch (Throwable t)
@@ -27,6 +29,8 @@ public class ServicioEnvio extends Service {
 
         return Service.START_NOT_STICKY;
     }
+
+    // Cuando terminamos el servicio realizamos el intent_reciver
 
     @Override
     public void onDestroy() {

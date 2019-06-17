@@ -8,6 +8,13 @@ import android.util.Log;
 
 public class AlarmaReceiver extends BroadcastReceiver {
 
+
+    /**
+     * Cuando suene la alarma llamara al pendingIntent que esta configurada con esta clase AlarmaReceiver
+     * parará por este método
+     * @param context
+     * @param intent
+     */
     @Override
     public void onReceive(Context context, Intent intent) {
 

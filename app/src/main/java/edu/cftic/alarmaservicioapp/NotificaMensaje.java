@@ -59,6 +59,11 @@ public class NotificaMensaje {
         Log.d("MIAPP", "Lanzando notificación");
         NotificationCompat.Builder nb = null;
 
+        /**
+         * Para versión de 8 o mas existen los canales, son tipos de aviso de notificaciones nueva
+         * si no se ejecuta de manera normal, por el else
+          */
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
 
             NotificationChannel nc = crearCanalNotificacion();
@@ -73,6 +78,7 @@ public class NotificaMensaje {
 
 
 
+        // esto es similar a un alertDialog
         nb.setSmallIcon(R.mipmap.ic_launcher);
         nb.setContentTitle("INFORME ENVIADO");
         nb.setAutoCancel(true);
@@ -81,6 +87,7 @@ public class NotificaMensaje {
         Intent resultIntent = new Intent(context, MainActivity.class);
         resultIntent.putExtra("MENSAJE", "VENGO DE LA ALARMA");
 
+        // Cuando le de a una notificacion iremos al main de nuevo
         PendingIntent resultPendingIntent = PendingIntent.getActivity(context, (int) System.currentTimeMillis(), resultIntent, PendingIntent.FLAG_ONE_SHOT);
 
         nb.setContentIntent(resultPendingIntent);

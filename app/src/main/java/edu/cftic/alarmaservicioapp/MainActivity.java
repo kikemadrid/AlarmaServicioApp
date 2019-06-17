@@ -21,6 +21,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * APLICACION QUE PROGRAMA UNA ALARMA GestorAlarma
+     * Esta a su vez cuando se activa reciever (AlarmaReceiver) lanza un servicio (ServicioEnvio)
+     * Cuando el anterior termina llama a un receiver (ServicioReceiver)
+     * Este ultimo a su vez llama a una notificación
+     * @param view
+     */
+
     public void lanzarAlarma(View view) {
 
         GestorAlarma ga = new GestorAlarma(this);
